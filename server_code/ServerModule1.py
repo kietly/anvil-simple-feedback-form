@@ -1,5 +1,9 @@
+import anvil.tables as tables
+import anvil.tables.query as q
+from anvil.tables import app_tables
 import anvil.email
 import anvil.server
+from datetime import datetime
 
 # This is a server module. It runs on the Anvil server,
 # rather than in the user's browser.
@@ -27,3 +31,10 @@ def send_feedback(name, email, feedback):
   Feedback: 
   {feedback}
   """)
+  
+  app_tables.feedback.send_row(
+    name=name,
+    email=email,
+    feedback=feedback,
+    created=datetime.now()
+  )

@@ -1,5 +1,23 @@
 allow_embedding: false
 package_name: Simple_Feedback_Form
+db_schema:
+  feedback:
+    client: none
+    server: full
+    columns:
+    - name: name
+      admin_ui: {width: 200, order: 0}
+      type: string
+    - name: email
+      admin_ui: {width: 200, order: 1}
+      type: string
+    - name: feedback
+      admin_ui: {width: 200, order: 2}
+      type: string
+    - name: created
+      admin_ui: {width: 200, order: 3}
+      type: datetime
+    title: feedback
 name: Simple Feedback Form
 startup_form: Form1
 runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
